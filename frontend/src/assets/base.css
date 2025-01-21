@@ -1,0 +1,95 @@
+:root {
+	--theme-color: #db9c2b;
+	--theme-color-offset-1: #dea540;
+	--theme-color-offset-2: #e2af55;
+	--theme-color-offset-3: #e5b96a;
+	--theme-color-offset-4: #e9c37f;
+
+	--bs-primary: var(--theme-color);
+	--bs-primary-rgb: 219, 156, 43;
+	--bs-primary-text-emphasis: var(--theme-color);
+	--bs-primary-bg-subtle: var(--theme-color-offset-4);
+	--bs-primary-border-subtle: var(--theme-color-offset-3);
+	--bs-link-color: var(--theme-color-offset-3);
+	--bs-link-color-rgb: 229, 185, 106;
+	--bs-link-hover-color: var(--theme-color);
+	--bs-link-hover-color-rgb: 219, 156, 43;
+}
+
+/* 
+@media (prefers-color-scheme: dark) {
+	:root {
+		
+	}
+} 
+*/
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-weight: normal;
+}
+
+/* BOOTSTRAP */
+.dropdown-menu,
+.dropdown-menu-dark {
+	--bs-dropdown-link-active-bg: var(--theme-color);
+}
+
+.nav-link:focus-visible {
+	box-shadow: 0 0 0 0.25rem rgba(233, 195, 127, 0.25);
+}
+
+.btn-primary {
+	--bs-btn-bg: var(--theme-color);
+	--bs-btn-border-color: var(--theme-color);
+	--bs-btn-hover-bg: var(--theme-color-offset-1);
+	--bs-btn-hover-border-color: var(--theme-color-offset-1);
+	--bs-btn-focus-shadow-rgb: 222, 165, 64;
+	--bs-btn-active-bg: var(--theme-color-offset-2);
+	--bs-btn-active-border-color: var(--theme-color-offset-2);
+	--bs-btn-disabled-bg: var(--theme-color-offset-3);
+	--bs-btn-disabled-border-color: var(--theme-color-offset-3);
+}
+
+.btn-outline-primary {
+	--bs-btn-color: var(--theme-color);
+	--bs-btn-border-color: var(--theme-color);
+	--bs-btn-hover-bg: var(--theme-color-offset-1);
+	--bs-btn-hover-border-color: var(--theme-color-offset-1);
+	--bs-btn-focus-shadow-rgb: 222, 165, 64;
+	--bs-btn-active-bg: var(--theme-color-offset-2);
+	--bs-btn-active-border-color: var(--theme-color-offset-2);
+	--bs-btn-disabled-color: var(--theme-color-offset-3);
+	--bs-btn-disabled-border-color: var(--theme-color-offset-3);
+}
+
+.form-check-input:checked {
+	background-color: var(--theme-color);
+	border-color: var(--theme-color);
+}
+
+.form-check-input[type="checkbox"]:indeterminate {
+	background-color: var(--theme-color);
+	border-color: var(--theme-color);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+	border-color: var(--theme-color-offset-3);
+	box-shadow: 0 0 0 0.25rem rgba(233, 195, 127, 0.25);
+}
+
+.form-range:focus::-webkit-slider-thumb,
+.form-range:focus::-moz-range-thumb {
+	box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(233, 195, 127, 0.25);
+}
+
+.form-range::-webkit-slider-thumb,
+.form-range::-moz-range-thumb {
+	background-color: var(--theme-color);
+}

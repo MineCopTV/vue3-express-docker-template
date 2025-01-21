@@ -1,0 +1,29 @@
+@import "./base.css";
+
+#app {
+	min-height: 100vh;
+	position: relative;
+}
+
+*::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	background-color: var(--bs-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--theme-color-offset-3);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: var(--theme-color);
+}
+
+*::-webkit-scrollbar-track {
+	background-color: var(--bs-dark);
+}
+
+/* TEST */
+.test {
+	border: 1px solid red;
+}

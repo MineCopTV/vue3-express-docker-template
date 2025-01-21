@@ -1,0 +1,42 @@
+services:
+  backend:
+    container_name: "app-api"
+    build: "./backend"
+    env_file:
+      - ".env"
+    ports:
+      - "${NODE_PORT}:${NODE_PORT}"
+    develop:
+      watch:
+        - action: sync
+          path: "./backend"
+          target: "/app"
+          ignore:
+            - "node_modules/"
+            - "pnpm-lock.yaml"
+            - "Dockerfile"
+            - ".dockerignore"
+        - action: rebuild
+          path: "package.json"
+
+  frontend:
+    container_name: "app"
+    depends_on:
+      - backend
+    build: "./frontend"
+    env_file:
+      - ".env"
+    ports:
+      - "${VITE_DEV_PORT}:${VITE_DEV_PORT}"
+    develop:
+      watch:
+        - action: sync
+          path: "./frontend"
+          target: "/app"
+          ignore:
+            - "node_modules/"
+            - "pnpm-lock.yaml"
+            - "Dockerfile"
+            - ".dockerignore"
+        - action: rebuild
+          path: "package.json"
