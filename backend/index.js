@@ -12,16 +12,13 @@ app.use(cors());
 app.use(helmet());
 
 // ROUTER
-app.get("/", (req, res) => {
-	res.json({ message: "Template WebApp" });
-});
-
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static(__dirname + "./public"));
-	app.get("*", (req, res) => res.sendFile(__dirname + "./public/index.html"));
-
+if (process.env.NODE_ENV === "prod") {
 	const limiter = require("./config/rateLimiter.config");
-	app.use("/api", limiter);
+	app.use("/", limiter);
+} else {
+	app.get("/", (req, res) => {
+		res.json({ message: "Template WebApp" });
+	});
 }
 
 // MIDDLEWARE
