@@ -9,4 +9,4 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 
 EXPOSE ${NODE_PORT}
-CMD ["sh", "-c", "if [ \"$ENV\" = 'production' ]; then pnpm start; else pnpm dev; fi"]
+CMD ["sh", "-c", "if [ \"$NODE_ENV\" = 'prod' ]; then pnpm start; else pnpm dev; fi"]
